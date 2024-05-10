@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<title> COMPUTER SCIENCE 3 - ALTERNATIVE ASSESSMENT #2 : SINGAYAO (LITHIUM) </title>
+
+<style>
+
+#Name {
+border: thick solid black;
+}
+
+#Pref_UserName {
+border: thick solid black;
+}
+
+#password {
+border: thick solid black;
+}
+
+#Email {
+border: thick solid black;
+}
+
+#Address {
+border: thick solid black;
+}
+
+#tArea {
+border: thick solid black;
+}
+
+#Inputs {
+border: thick solid black;
+}
+
+#Gender {
+border: thick solid black;
+}
+
+#form {
+margin-bottom: 50px;
+}
+
+</style>
+</head>
+
+<body>
+
+<div id="form">
+<form onsubmit="return myFunction();" id="SignUp_Sheet">
+
+<legend> <h1> COMPUTER SCIENCE 3 - AA2 : INTERACTIVE SIGN UP SHEET (SINGAYAO, LITHIUM) </h1> </legend></br>
+
+<fieldset form="Name_Sheet"> 
+<label for="Name"> Name: </label></br>
+<input type="text" id="Name" name="Name" onblur="return NameBlur()" onfocus="return NameFocus()"></br>
+</fieldset></br>
+
+
+<fieldset form="UserName_Sheet"> 
+<label for="Pref_UserName"> Preferred Username </label></br>
+<input type="text" id="Pref_UserName" name="Pref_UserName" onblur="return UserNameBlur()" onfocus="return UserNameFocus()"></br>
+</fieldset></br>
+
+
+<fieldset form="Gender_Sheet" id="Gender_Sheet"> </br>
+<label for="gender"> Select Your Gender: </label></br>
+<select name="Gender" id="Gender" onblur="return GenderBlur()" onfocus="return GenderFocus()">
+<option value=""""> Select Gender </option>
+<option value="MALE"> Male </option>
+<option value="FEMALE"> Female </option>
+<option value="PREFER NOT TO MENTION"> Prefer not to mention </option>
+</select> 
+</fieldset></br>
+
+
+<fieldset form="Password_Sheet"> 
+<label for="password"> Password: </label></br>
+<input type="password" id="password" name="password" onblur="return PasswordBlur()" onfocus="return PasswordFocus()"></br>
+</fieldset></br>
+
+<fieldset form="Email_Sheet"> 
+<label for="Email"> Email: </label></br>
+<input type="email" id="Email" name="Email" onblur="return EmailBlur()" onfocus="return EmailFocus()"></br>
+</fieldset></br>
+
+<fieldset form="Address_Sheet"> 
+<label for="Address"> Address: </label></br>
+<input type="text" id="Address" name="Address" onblur="return AddressBlur()" onfocus="return AddressFocus()"></br>
+</fieldset></br>
+
+<fieldset form="Paragraph_Sheet"> 
+<label for="paragraph"> Short Paragraph About your Interests </label></br>
+<textarea id="tArea" name="paragraph" rows="10" cols="100" onblur="return ParagraphBlur()" onfocus="return ParagraphFocus()"> </textarea></br>
+</fieldset></br>
+
+<fieldset form="Submit_Sheet"> 
+<input type="submit" value="Submit Form"></br>
+</fieldset></br>
+
+
+<fieldset form="Reset_Sheet"> 
+<input type="reset" value="Reset" onclick="return ResetFunction()"></br>
+</fieldset></br>
+
+</form>
+</div>
+
+
+
+<div id="Inputs">
+<h1> USER INPUTS - INTERACTIVE SIGN UP SHEET </h1>
+<p id="inputs-name">
+</p>
+
+<p id="inputs-username">
+</p>
+
+<p id="inputs-gender">
+</p>
+
+<p id="inputs-password">
+</p>
+
+<p id="inputs-email">
+</p>
+
+<p id="inputs-address">
+</p>
+
+<p id="inputs-paragraph">
+</p>
+</div>
+
+<script>
+ 
+function myFunction() {
+var displayNAME = document.getElementById("Name").value;
+document.getElementById("inputs-name").innerHTML = "Your Inputted Name is "+displayNAME+".";
+
+var displayUSERNAME = document.getElementById("Pref_UserName").value;
+document.getElementById("inputs-username").innerHTML = "Your Inputted Username is "+displayUSERNAME+".";
+
+var x = document.getElementById("Gender").value;
+document.getElementById("inputs-gender").innerHTML = "Your Inputted Gender is "+x+".";
+
+var displayPASSWORD = document.getElementById("password").value;
+document.getElementById("inputs-password").innerHTML = "Your Inputted Password is "+displayPASSWORD+".";
+
+var displayEMAIL = document.getElementById("Email").value;
+document.getElementById("inputs-email").innerHTML = "Your Inputted Email is "+displayEMAIL+".";
+
+var displayADDRESS = document.getElementById("Address").value;
+document.getElementById("inputs-address").innerHTML = "Your Inputted Address is "+displayADDRESS+".";
+
+var displayPARAGRAPH = document.getElementById("tArea").value;
+document.getElementById("inputs-paragraph").innerHTML = "Your Inputted Paragraph is "+displayPARAGRAPH+".";
+
+return false;
+}
+
+function NameBlur() {
+var y = document.getElementById("Name").value;
+if (y == "") {
+y = document.getElementById("Name").style.borderColor = "red";
+} 
+}
+
+function UserNameBlur() {
+var y = document.getElementById("Pref_UserName").value;
+if (y == "") {
+y = document.getElementById("Pref_UserName").style.borderColor = "red";
+} 
+}
+
+function GenderBlur() {
+var y = document.getElementById("Gender").value;
+if (y == "") {
+y = document.getElementById("Gender").style.borderColor = "red";
+}
+}
+
+function PasswordBlur() {
+var y = document.getElementById("password").value;
+if (y == "") {
+y = document.getElementById("password").style.borderColor = "red";
+} 
+}
+
+function EmailBlur() {
+var y = document.getElementById("Email").value;
+if (y == "") {
+y = document.getElementById("Email").style.borderColor = "red";
+} 
+}
+
+function AddressBlur() {
+var y = document.getElementById("Address").value;
+if (y == "") {
+y = document.getElementById("Address").style.borderColor = "red";
+} 
+}
+
+function ParagraphBlur() {
+var y = document.getElementById("tArea").value;
+if (y == "") {
+y = document.getElementById("tArea").style.borderColor = "red";
+}
+}
+
+function NameFocus() {
+document.getElementById("Name").style.borderColor = "green";
+}
+
+function UserNameFocus() {
+document.getElementById("Pref_UserName").style.borderColor = "green";
+}
+
+function GenderFocus() {
+document.getElementById("Gender").style.borderColor = "green";
+}
+
+function PasswordFocus() {
+document.getElementById("password").style.borderColor = "green";
+}
+
+function EmailFocus() {
+document.getElementById("Email").style.borderColor = "green";
+}
+
+function AddressFocus() {
+document.getElementById("Address").style.borderColor = "green";
+}
+
+function ParagraphFocus() {
+document.getElementById("tArea").style.borderColor = "green";
+}
+
+function ResetFunction() {
+document.getElementById("inputs-name").innerHTML = "";
+document.getElementById("inputs-username").innerHTML = "";
+document.getElementById("inputs-gender").innerHTML = "";
+document.getElementById("inputs-password").innerHTML = "";
+document.getElementById("inputs-email").innerHTML = "";
+document.getElementById("inputs-address").innerHTML = "";
+document.getElementById("inputs-paragraph").innerHTML = "";
+
+document.getElementById("Name").style.borderColor = "black";
+document.getElementById("Pref_UserName").style.borderColor = "black";
+document.getElementById("Gender").style.borderColor = "black";
+document.getElementById("password").style.borderColor = "black";
+document.getElementById("Email").style.borderColor = "black";
+document.getElementById("Address").style.borderColor = "black";
+document.getElementById("tArea").style.borderColor = "black";
+}
+
+</script>
+
+</body>
+</html>
